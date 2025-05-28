@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #001e35;
+}
+
+.course-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  padding: 100px;
+  font-weight: bold;
+}
+/* #f7fc6a */
+.circle-menu{
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+
+}
+.circle-menu .menu-bottun{
+  background-color: #00abff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+}
+.circle-menu .menu-bottun i{
+  font-size: 1.4375rem;
+  position: relative;
+  top: 13px;
+  transition: transform .2s;
+}
+.active .menu-bottun{
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  transform: rotate(45deg);
+
+}
+.circle-menu .menu-bottun:active{
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.5);  
+}
+.circle-menu .menu-bottun:active i{
+  transform: rotate(45deg);
+}
+.circle-menu::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: #13a5ee;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: block;
+  z-index: -2;
+  transition: all .3s ease;
+}
+.active::after{
+  transform: scale3d(5.5,5.5,1);
+  transition: cubic-bezier(.68,1.5,.25,1);
+
+}
+.circle-menu .items-wrapper{
+  text-align: center;
+}
+.circle-menu .menu-item{
+  z-index: -1;
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background-color:#00abff ;
+  border-radius: 50%;
+  display: block;
+  text-align: center;
+  top:0em;
+  right: 0.1em;
+  padding-top: .875rem;
+  transition: transform .3s ease,background-color .2s ease;
+
+
+}
+.circle-menu .items-wrapper .menu-item:hover{
+background-color:#00a2ff ;
+}
+.active .items-wrapper .menu-item:nth-child(1){
+  transform: translate3d(-0.1em,-6.4em,0);
+}
+.active .items-wrapper .menu-item:nth-child(2){
+  transform: translate3d(3.1em,-5.4em,0);
+}
+.active .items-wrapper .menu-item:nth-child(3){
+  transform: translate3d(5.6em,-3.1em,0);
+}
+.active .items-wrapper .menu-item:nth-child(4){
+  transform: translate3d(6.3em,0.3em,0);
+}
